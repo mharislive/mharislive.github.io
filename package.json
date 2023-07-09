@@ -2,6 +2,7 @@
   "name": "cra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mharislive.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,7 +12,10 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/validator": "^13.7.17",
+    "axios": "^1.4.0",
+    "gh-pages": "^5.0.0",
     "lottie-react": "^2.4.0",
+    "msw": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -20,6 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +50,20 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "tailwindcss": "^3.3.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@shotgunjed)/"
+    ],
+    "coverageReporters": [
+      "json",
+      "html",
+      "text"
+    ]
   }
 }
