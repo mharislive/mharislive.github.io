@@ -5,7 +5,7 @@ const Header = () => {
   const { category, setCategory, categories } = useContext(WaifuContext);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategory(e.target.value);
+    setCategory?.(e.target.value);
   };
 
   return (
