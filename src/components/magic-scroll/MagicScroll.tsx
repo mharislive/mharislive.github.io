@@ -11,7 +11,7 @@ const MagicScroll = () => {
     const els = document.querySelectorAll(".magic-container");
     let observer: IntersectionObserver;
     const options = {
-      threshold: 0.3,
+      threshold: [0.3, 0.7],
     };
 
     const initObserver = () => {
@@ -20,10 +20,10 @@ const MagicScroll = () => {
       });
     };
 
-    const resetObserver = () => {
+    /* const resetObserver = () => {
       observer.disconnect();
       initObserver();
-    };
+    }; */
 
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -31,8 +31,8 @@ const MagicScroll = () => {
           containerRef.current.className =
             entry.target.getAttribute("data-color") || "bg-white";
 
-          // this fixed scroll up issue
-          resetObserver();
+          // this can be helpful in some scenarios
+          // resetObserver();
         }
       });
     };

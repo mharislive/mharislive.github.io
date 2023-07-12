@@ -1,10 +1,8 @@
-// import SignUpForm from "./components/sign-up-form/SignUpForm";
-//import MagicScroll from "./components/magic-scroll/MagicScroll";
-import AnimeWaifu from "./components/anime-waifu";
-// import Hamburger from "./components/hamburger/Hamburger";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
-function App() {
-  return <AnimeWaifu />;
-}
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;
