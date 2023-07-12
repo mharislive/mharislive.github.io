@@ -16,7 +16,7 @@ const Navigation = () => {
     fixedTop: 0,
     height: 0,
   });
-  const { top, height } = marker;
+  const { top, height, fixedTop } = marker;
 
   const onMouseMoveHandler = (e: React.MouseEvent<HTMLElement>) => {
     const item = e.target as HTMLElement;
@@ -66,7 +66,10 @@ const Navigation = () => {
           </NavLink>
         ))}
         <div
-          className="bg-fuchsia-950 absolute w-11/12 left-2/4 -translate-x-2/4 -z-10 -skew-x-12 transition-all ease-out duration-300"
+          className={clsx(
+            "bg-fuchsia-950 absolute w-11/12 left-2/4 -translate-x-2/4 -z-10 -skew-x-12 transition-all ease-out duration-300",
+            fixedTop === top && "animate-custom-pulse"
+          )}
           style={{ top, height }}
         />
         <button
