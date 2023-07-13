@@ -4,6 +4,10 @@ export const ROUTES = {
   ANIME_WAIFUS: { path: "anime-waifus", label: "Anime Waifus" },
   LOTTIE_ANIMATION: { path: "lottie-animation", label: "Lottie Animation" },
   MAGIC_SCROLL: { path: "magic-scroll", label: "Magic Scroll" },
+  ANIME_RECOMMENDATIONS: {
+    path: "anime-recommendations",
+    label: "Anime Recommendations",
+  },
 };
 
 export const navigation = [
@@ -15,4 +19,8 @@ export const navigation = [
     label: ROUTES.LOTTIE_ANIMATION.label,
   },
   { path: `/${ROUTES.MAGIC_SCROLL.path}`, label: ROUTES.MAGIC_SCROLL.label },
+  {
+    path: `/${ROUTES.ANIME_RECOMMENDATIONS.path}`,
+    label: ROUTES.ANIME_RECOMMENDATIONS.label,
+  },
 ];
